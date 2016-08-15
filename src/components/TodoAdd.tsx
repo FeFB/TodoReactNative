@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {AppRegistry, View, Text, StyleSheet, TextInput} from 'react-native';
-import {Button} from 'react-native-material-design';
 
 interface TodoAddProps {
   onUserInput(value: string): void;
@@ -38,7 +37,7 @@ export class TodoAdd extends React.Component<TodoAddProps, any> {
                   placeholder = "IO aqui..."
                   placeholderTextColor = '#acc3ec'
                 />
-            
+              
               </View>
             </View>
         );
@@ -49,6 +48,7 @@ export class TodoAdd extends React.Component<TodoAddProps, any> {
 const styles = StyleSheet.create ({
 
     bigView: {
+      flex: 1,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',

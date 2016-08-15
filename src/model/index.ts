@@ -1,6 +1,5 @@
-import {TODOS, TodoModel} from './TodoModel';
+import {TodoModel} from './TodoModel';
 
 export {
-  TODOS as TODOS,
   TodoModel as TodoModel
 }

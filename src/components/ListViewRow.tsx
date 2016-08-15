@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View,  Text, StyleSheet} from 'react-native';
-import {Button, Card } from 'react-native-material-design';
+
 
 
 interface ListViewRowProps {
@@ -16,11 +16,13 @@ export class ListViewRow extends React.Component<ListViewRowProps, any> {
 
 
   render () {
-    var done = 'Nao';
+    var done : string = 'Nao';
     if (this.props.rowData.done) { done = 'Sim'; }
 
     return (
+      
       <View style ={styles.row}>
+ 
         <Text style={{fontSize:15, color: '#acc3ec'}}>{this.props.rowData.todoText} @ Pronto? {done} </Text>
         <View style={{flex:1}}>
           <Text style={styles.selectionText}> {this.props.rowData[this.props.rowData.Selection]} </Text>
@@ -48,7 +50,6 @@ const styles = StyleSheet.create ({
     textAlign: 'center'
   },
   row:{
-    flex:1,
     flexDirection:'row',
     padding:18,
     borderBottomWidth: 1,

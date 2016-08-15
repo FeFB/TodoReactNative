@@ -41,7 +41,9 @@ export class ListViewTodo extends React.Component <ListViewTodoProps, any> {
 
     return (
       <View>
-        <Text style= {styles.footer}> Todos que foram Registradas </Text>
+
+         <Text style= {styles.footer}> Todos que foram Registradas </Text>
+  
       </View>
     );
   }
@@ -56,13 +58,6 @@ export class ListViewTodo extends React.Component <ListViewTodoProps, any> {
       doa = 'Sim';
     }
 
-    /*<View style ={styles.row}>
-    <Text style={{fontSize:15, color: '#acc3ec'}}>{rowData.todoText} @ Pronto? {doa} </Text>
-      <View style={{flex:1}}>
-        <Text style={styles.selectionText}> {rowData[rowData.Selection]} </Text>
-      </View>
-  </View>*/
-
     return (
       <TouchableNativeFeedback
         onLongPress = {() => console.log('Long Press')}
@@ -70,7 +65,9 @@ export class ListViewTodo extends React.Component <ListViewTodoProps, any> {
         background={TouchableNativeFeedback.SelectableBackground()}
       >
       <View>
+       
         <ListViewRow  rowData = {rowData}></ListViewRow>
+
       </View>
     </TouchableNativeFeedback>
     )

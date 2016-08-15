@@ -2,7 +2,8 @@ import * as React from 'react';
 import {AppRegistry, View, Text, TextInput, StyleSheet, ListView} from 'react-native';
 import {TodoAdd} from './TodoAdd';
 import {ListViewTodo} from './ListViewTodo';
-import {TodoModel}  from '../model';
+
+
 
 export var TODOS = [
     { todoText: 'Sporting Goods', done: false },
@@ -17,7 +18,7 @@ interface TodoMainProps {
 }
 
 interface TodoMainState {
-    todos: TodoModel[];
+    todos: [];
 }
 
 export class TodoMainView extends React.Component <TodoMainProps, TodoMainState> {
@@ -31,7 +32,7 @@ export class TodoMainView extends React.Component <TodoMainProps, TodoMainState>
     }
 
   }
-
+  
   private handlerUserInput(todoText: string) : void {
     console.log('HandlerUserInput ' + todoText);
     var todoPut =  { todoText: todoText, done: false };
@@ -59,16 +60,18 @@ export class TodoMainView extends React.Component <TodoMainProps, TodoMainState>
   render () {
     return (
 
-      <View style = {styles.View}>
-        <TodoAdd     onUserInput = {this.handlerUserInput}/>
-        <ListViewTodo todos = {this.state.todos}
+        <View>
+               
+            <TodoAdd     onUserInput = {this.handlerUserInput}/>  
+            <ListViewTodo todos = {this.state.todos}
                       pressRow = { (rowID) => this.pressRow(rowID)}/>
-      </View>
+        </View>
+   
     );
   }
 }
 const styles = StyleSheet.create ({
-  View: {
-    flex: 1
+  MasterView: {
+     flex: 1
   }
 });
